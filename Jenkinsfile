@@ -4,7 +4,7 @@ pipeline {
             label 'JenkinsSlaveNodeLabel'
         }
     }
-    
+
     stages {
         stage('Checkout code') {
             steps {
@@ -29,13 +29,9 @@ pipeline {
                     sh 'docker tag myimage $DOCKER_USERNAME/myimage'
                     sh 'docker push $DOCKER_USERNAME/myimage'
                 }
-                   
+
             }
         }
-        stage('Deploy application to kubernetes') {
-            steps {
-                sh 'kubectl apply -f my-deployment.yml'
-            }
-        }
+
     }
 }
