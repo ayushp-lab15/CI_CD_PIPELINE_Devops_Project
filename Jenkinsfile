@@ -26,6 +26,11 @@ pipeline {
 
             }
         }
+        stage('Deploy application to kubernetes') {
+            steps {
+                sh 'kubectl apply -f mypod.yml'
+            }
+        }
 
     }
 }
