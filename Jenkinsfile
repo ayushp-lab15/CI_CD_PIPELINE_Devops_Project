@@ -11,8 +11,7 @@ pipeline {
                 git url: 'https://github.com/ayushp-lab15/CI_CD_PIPELINE_Devops_Project.git', branch: 'main'
             }
         }
-        
-        stage('Build Docker Image') {
+    stage('Build Docker Image') {
             steps {
                 sh 'docker build -t myimage .'
             }
