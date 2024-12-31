@@ -11,12 +11,7 @@ pipeline {
                 git url: 'https://github.com/ayushp-lab15/CI_CD_PIPELINE_Devops_Project.git', branch: 'main'
             }
         }
-        stage('cleanup stage') {
-            steps {
-                sh 'docker rmi -f myimage'
-                sh 'docker rm -f $(docker ps -aq)'
-            }
-        }
+        
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t myimage .'
