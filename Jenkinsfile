@@ -14,7 +14,7 @@ pipeline {
        
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t myimage .'
+                sh 'docker build -t myimage ./home/ubuntu/jenkins/workspace/CICDProjectPipeline'
             }
         }
        stage('Build and Push Image') {
